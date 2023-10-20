@@ -201,12 +201,7 @@ class QuantityInput extends HTMLElement {
       
       this.input.stepDown();
     }
-
-    if (previousValue !== this.input.value) {
-      console.log("manualy changed value");
-      console.log(this.input.value);
-      this.input.dispatchEvent(this.changeEvent);
-    }
+    if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
   }
 
   validateQtyRules() {

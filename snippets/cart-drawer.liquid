@@ -61,7 +61,7 @@
       {%- endif -%}
       <div class="drawer__header">
         <h2 class="drawer__heading">
-          {{ 'sections.cart.title' | t }}&nbsp;<span class="drawer__heading-counter">({{ cart.item_count }})</span>
+          {{ 'sections.cart.title' | t }}&nbsp;<span name="cart-overall-counter">({{ cart.item_count }})</span>
         </h2>
         <button
           class="drawer__close"
@@ -142,7 +142,7 @@
                           </a>
 
                           <p>
-                            Quantity:&nbsp;<span class="quantity-{{item.id}}">{{ item.quantity }}</span>
+                            Quantity:&nbsp;<span name="quantity-{{item.id}}">{{ item.quantity }}</span>
                           </p>
 
                           {%- if item.original_price != item.final_price -%}

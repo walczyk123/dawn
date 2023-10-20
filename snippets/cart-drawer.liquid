@@ -136,7 +136,8 @@
                           {%- endif -%}
 
                           <a href="{{ item.url }}" class="cart-item__name h4 break">
-                            {{- item.product.title | escape -}}&nbsp;({{ item.quantity }})
+                            {{- item.product.title | escape -}}
+                            &nbsp;(<span class="{{item.id}}">{{ item.quantity }}</span>)
                           </a>
 
                           {%- if item.original_price != item.final_price -%}

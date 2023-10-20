@@ -129,7 +129,7 @@ class CartItems extends HTMLElement {
         let quantity_field_name = `quantity-${quantityElement.getAttribute('data-quantity-variant-id')}`
         console.log("name: ", quantity_field_name);
 
-        console.log("quantity: ", document.getElementById(`Drawer-quantity-${line}`).innerHTML);
+        console.log("quantity: ", document.getElementById(`Drawer-quantity-${line}`).value);
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');

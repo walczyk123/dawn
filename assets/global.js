@@ -186,7 +186,7 @@ class QuantityInput extends HTMLElement {
 
     if (event.target.name === 'plus'){
       let quantity_field_name = `quantity-${event.target.previousElementSibling.getAttribute('data-quantity-variant-id')}`;
-      let item_quantity = document.getElementsByName(quantity_field_name)[0].innerHTML = this.value + 1;
+      let item_quantity = document.getElementsByName(quantity_field_name)[0].innerHTML = this.input.value + 1;
       console.log(quantity_field_name);
       console.log(item_quantity);
 

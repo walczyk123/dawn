@@ -104,6 +104,12 @@ class CartItems extends HTMLElement {
   }
 
   updateQuantity(line, quantity, name, variantId) {
+    // dynamicaly update item quantity
+    console.log("manualy changed value");
+        
+    let quantity_field_name = `quantity-${quantityElement.getAttribute('data-quantity-variant-id')}`;
+    document.getElementsByName(quantity_field_name)[0].innerHTML = document.getElementById(`Drawer-quantity-${line}`).value;
+
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -122,12 +128,6 @@ class CartItems extends HTMLElement {
         const quantityElement =
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
-
-        // dynamicaly update item quantity
-        console.log("manualy changed value");
-        
-        let quantity_field_name = `quantity-${quantityElement.getAttribute('data-quantity-variant-id')}`;
-        document.getElementsByName(quantity_field_name)[0].innerHTML = "changed";
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');

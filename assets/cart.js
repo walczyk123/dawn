@@ -44,7 +44,6 @@ class CartItems extends HTMLElement {
 
   onChange(event) {
     // dynamicaly update item quantity
-    console.log("manualy changed value, line: ", event.target.dataset.index);
     let item_quantity = document.getElementById(`Drawer-quantity-${event.target.dataset.index}`);
     let quantity_field_name = `quantity-${item_quantity.getAttribute('data-quantity-variant-id')}`;
     let overall_diff = parseInt(item_quantity.value) - parseInt(document.getElementsByName(quantity_field_name)[0].innerHTML);

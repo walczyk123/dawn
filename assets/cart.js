@@ -46,7 +46,7 @@ class CartItems extends HTMLElement {
     // dynamicaly update item quantity
     console.log("manualy changed value, line: ", event.target.dataset.index);
     
-    item_quantity = document.getElementById(`Drawer-quantity-${event.target.dataset.index}`).value;
+    let item_quantity = document.getElementById(`Drawer-quantity-${event.target.dataset.index}`).value;
 
     console.log(item_quantity);
 

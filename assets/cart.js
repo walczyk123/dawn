@@ -43,6 +43,18 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
+    // dynamicaly update item quantity
+    console.log("manualy changed value, line: ", event.target.dataset.index);
+    
+    item_quantity = document.getElementById(`Drawer-quantity-${event.target.dataset.index}`).value;
+
+    console.log(item_quantity);
+
+    let quantity_field_name = `quantity-${item_quantity.getAttribute('data-quantity-variant-id')}`;
+    document.getElementsByName(quantity_field_name)[0].innerHTML = document.getElementById(`Drawer-quantity-${event.target.dataset.index}`).value;
+
+    
+    // end of dynamic update
     this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'), event.target.dataset.quantityVariantId);
   }
 
@@ -104,18 +116,7 @@ class CartItems extends HTMLElement {
   }
 
   updateQuantity(line, quantity, name, variantId) {
-    // dynamicaly update item quantity
-    console.log("manualy changed value, line: ", line);
-    
-    item_quantity = document.getElementById(`Drawer-quantity-${line}`).value;
-
-    console.log(item_quantity);
-
-    let quantity_field_name = `quantity-${item_quantity.getAttribute('data-quantity-variant-id')}`;
-    document.getElementsByName(quantity_field_name)[0].innerHTML = document.getElementById(`Drawer-quantity-${line}`).value;
-
     this.enableLoading(line);
-
     const body = JSON.stringify({
       line,
       quantity,

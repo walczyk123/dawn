@@ -122,9 +122,14 @@ class CartItems extends HTMLElement {
         const quantityElement =
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
+
+        // dynamicaly update item quantity
         console.log("manualy changed value");
-        let quantity_field_name = quantityElement.getAttribute('data-quantity-variant-id')
-        console.log(quantity_field_name);
+        
+        let quantity_field_name = `quantity-${quantityElement.getAttribute('data-quantity-variant-id')}`
+        console.log("name: ", quantity_field_name);
+
+        console.log("quantity: ", document.getElementById(`Drawer-quantity-${line}`).innerHTML);
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');

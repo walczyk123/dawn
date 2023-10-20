@@ -185,13 +185,17 @@ class QuantityInput extends HTMLElement {
     const previousValue = this.input.value;
 
     if (event.target.name === 'plus'){
-      console.log(document.getElementsByName("cart-overall-counter")[0].innerHTML);
+      let overall_counter = document.getElementsByName("cart-overall-counter")[0]
+      overall_counter.innerHTML = parseInt(overall_counter.innerHTML) + 1
 
       let quantity_field_name = `quantity-${event.target.previousElementSibling.getAttribute('data-quantity-variant-id')}`;
       document.getElementsByName(quantity_field_name)[0].innerHTML = parseInt(this.input.value) + 1;
 
       this.input.stepUp()
     } else {
+      let overall_counter = document.getElementsByName("cart-overall-counter")[0]
+      overall_counter.innerHTML = parseInt(overall_counter.innerHTML) - 1
+
       let quantity_field_name = `quantity-${event.target.nextElementSibling.getAttribute('data-quantity-variant-id')}`;
       document.getElementsByName(quantity_field_name)[0].innerHTML = parseInt(this.input.value) - 1;
       

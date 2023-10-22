@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", updateQuantities());
 function updateQuantities() {
   let cartItemDetails = document.getElementsByClassName("cart-item__details");
   let cartFooter = document.getElementsByClassName("cart-drawer__footer")[0];
-
   let totalItemsCounter = 0;
 
   for (let item of cartItemDetails) {

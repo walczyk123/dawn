@@ -56,8 +56,13 @@
     content: "mercury";
     color: gray;
   }
-
+  
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
   }
+  
 {%- endstyle -%}
 <h1>Testing new section: {{ section.settings.default }}</h1>
 <div style="display:flex; justify-content:center">

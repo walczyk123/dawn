@@ -1,3 +1,61 @@
+{%- style -%}
+  .sun {
+    position: relative;
+    background: yellow;
+    width: var(--sun-diameter);
+    height: var(--sun-diameter);
+    margin: auto;
+    top: 50%;
+    border-radius: 2rem;
+    animation: pulse 15s linear infinite;
+    z-index: 12;
+  }
+  
+  .planet {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 1px 1px 0 0;
+    border-radius: 50%;
+  }
+
+  .planet:hover, .satelite:hover {
+    border-color: white;
+    border-width: 2px;
+  }
+  
+  .planet::before, .satelite::before{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .mercury {
+    top: calc(var(--mercury-orbit) / -2 - var(--sun-diameter) / -2);
+    left: calc(var(--mercury-orbit) / -2 - var(--sun-diameter) / -2);
+    width: var(--mercury-orbit);
+    height: var(--mercury-orbit);
+    border-color: #88807b transparent transparent transparent;
+    animation: orbit 5s linear infinite;
+    text-align: right;
+    z-index: 10;
+  }
+  
+  .mercury::before {
+    background-color: #787276;
+    width: var(--mercury-diameter);
+    height: var(--mercury-diameter);
+    top: calc(var(--mercury-orbit) * 0.108);
+    left: calc(var(--mercury-orbit) * 0.8538 - var(--mercury-diameter) / 2);
+  }
+  
+  .mercury:hover::after {
+    content: "mercury";
+    color: gray;
+  }
+
+  }
+{%- endstyle -%}
 <h1>Testing new section: {{ section.settings.default }}</h1>
 <div style="display:flex; justify-content:center">
   <a href="https://codepen.io/Vinne/pen/LYqNPBV"> Link to Codepen</a>

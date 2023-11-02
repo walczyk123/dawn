@@ -1,8 +1,16 @@
 <h1>Testing new section</h1>
+<div style="display:flex; justify-content:center"></div>
 {% schema %}
   {
     "name": "Section for tests",
-    "settings": [],
+    "settings": [
+      {
+        "type": "text",
+        "id": "test-sec",
+        "label": "Heading",
+        "default": "First Test Heading"
+      }
+    ],
     "presets": [
       {
         "name": "tests"

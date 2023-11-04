@@ -9,6 +9,7 @@
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'product-badge.css' |  asset_url |  stylesheet_tag }}
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
@@ -74,6 +75,15 @@
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
+
+        {%- unless product.metafields.custom.badge_type.value contains 'none' or product.metafields.custom.badge_type.value == blank -%}
+          <div 
+            style="background-color: {{ product.metafields.custom.badge_color | default: '#87CEEB'}}"
+            class="product__info-badge"
+          >
+            <p class="product__info-badge-text">{{ product.metafields.custom.badge_type.value}}</p>
+          </div>
+        {%- endunless -%}
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}

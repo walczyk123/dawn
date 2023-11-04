@@ -22,6 +22,7 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+{{ 'product-badge.css' |  asset_url |  stylesheet_tag }}
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -99,6 +100,14 @@
                 >
               {%- endif -%}
             </div>
+            {%- unless card_product.metafields.custom.badge_type.value contains 'none' or card_product.metafields.custom.badge_type.value == blank -%}
+              <div 
+                style="z-index: 10;background-color: {{ card_product.metafields.custom.badge_color | default: '#87CEEB'}}"
+                class="card__media-product-badge"
+              >
+                <p class="card__media-badge-text">{{ card_product.metafields.custom.badge_type.value}}</p>
+              </div>
+            {%- endunless -%}
           </div>
         {%- endif -%}
         <div class="card__content">

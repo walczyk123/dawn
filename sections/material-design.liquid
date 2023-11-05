@@ -1,8 +1,3 @@
-<div>
-  <h3> {{section.settings.text}} </h3>
-  <p> {{section.settings.description}} </p>
-</div>
-
 {% schema %}
   {
     "name": "Material Design",
@@ -20,8 +15,10 @@
         "label": "image",
         "id": "material-design-image"
       }
-    ]
+    ],
+    "presets": [{
+    "name": "Material Design for PDP",
+    "category": "Text"
+  }]
   }
 {% endschema %}
-
-

@@ -3,29 +3,34 @@
 <div class="page-width">
   <div class="material-design__container">
     <div class="material-design__container-header"> 
-      <h3> {{section.settings.text}} </h3>
-      <p> {{section.settings.description}} </p>
+      <h3> {{section.settings.material-design-title}} </h3>
+      <p> {{section.settings.material-design-description}} </p>
     </div>
     <div class="material-design__container-multicolumn">
       <div class="container__multicolumn-item" > 
         <div class="multicolum-item__title">Delivery time</div>
-        <div class="multicolum-item__description"> Your delivery time is {{section.settings.delivery_time}} val {{section.settings.delivery_time.value}}</div>
+        <div class="multicolum-item__description"> Your delivery time is {{section.settings.material-design-delivery-time}}</div>
     </div>
-
-    <div class="container__multicolumn-item" > 
-      <div class="multicolum-item__title">Material 1</div>
-      <div class="multicolum-item__description"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
+    {% if section.settings.material-design-material-3%}
+      <div class="container__multicolumn-item" > 
+        <div class="multicolum-item__title">{{section.settings.material-design-material-1}}</div>
+        <div class="multicolum-item__description"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
+      </div>
+    {% endif %}
+  
+    {% if section.settings.material-design-material-3%}
+      <div class="container__multicolumn-item" > 
+        <div class="multicolum-item__title">{{section.settings.material-design-material-2}}</div>
+        <div class="multicolum-item__description"> Pair text with an image to focus on your chosen prvailability, style, or even provide a review.</div>
     </div>
-
-    <div class="container__multicolumn-item" > 
-      <div class="multicolum-item__title">Material 2</div>
-      <div class="multicolum-item__description"> Pair text with an image to focus on your chosen prvailability, style, or even provide a review.</div>
-    </div>
-
-    <div class="container__multicolumn-item" > 
-      <div class="multicolum-item__title">Material 3</div>
-      <div class="multicolum-item__description"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
-    </div>
+    {% endif %}
+    
+    {% if section.settings.material-design-material-3%}
+      <div class="container__multicolumn-item" > 
+        <div class="multicolum-item__title">{{section.settings.material-design-material-3}}</div>
+        <div class="multicolum-item__description"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
+      </div>
+    {% endif %}
   </div>
 </div>
 

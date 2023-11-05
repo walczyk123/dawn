@@ -3,13 +3,13 @@
 <div class="page-width">
   <div class="material-design__container">
     <div class="material-design__container-header"> 
-      <h3> {{section.settings.text}} Title </h3>
-      <p> {{section.settings.description}} Description </p>
+      <h3> {{section.settings.text}} </h3>
+      <p> {{section.settings.description}} </p>
     </div>
     <div class="material-design__container-multicolumn">
       <div class="container__multicolumn-item" > 
         <div class="multicolum-item__title">Delivery time</div>
-        <div class="multicolum-item__description"> Your delivery time is</div>
+        <div class="multicolum-item__description"> Your delivery time is {{section.settings.delivery_time}} val {{section.settings.delivery_time.value}}</div>
     </div>
 
     <div class="container__multicolumn-item" > 

@@ -3,32 +3,34 @@
 <div class="page-width">
   <div class="material-design__container">
     <div class="material-design__container-header"> 
-      <h3> {{section.settings.material-design-title}} </h3>
-      <p> {{section.settings.material-design-description}} </p>
+      <h3 class="text-center"> {{section.settings.material-design-title}} </h3>
+      <p class="material-design__text--center material-design__text--indent">{{section.settings.material-design-description}} </p>
     </div>
+
     <div class="material-design__container-multicolumn">
       <div class="container__multicolumn-item" > 
         <div class="multicolum-item__title">Delivery time</div>
-        <div class="multicolum-item__description"> Your delivery time is {{section.settings.material-design-delivery-time}}</div>
+        <div class="material-design__text--indent"> Your delivery time is {{section.settings.material-design-delivery-time}} days</div>
     </div>
-    {% if section.settings.material-design-material-1 != blank %}
+    {{section.settings.material_1 }}
+    {% if section.settings.material_1 != blank %}
       <div class="container__multicolumn-item" > 
         <div class="multicolum-item__title">{{section.settings.material-design-material-1}}</div>
-        <div class="multicolum-item__description"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
+        <div class="material-design__text--indent"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
       </div>
     {% endif %}
   
-    {% if section.settings.material-design-material-2 != blank %}
+    {% if section.settings.material_2  != blank %}
       <div class="container__multicolumn-item" > 
-        <div class="multicolum-item__title">{{section.settings.material-design-material-2}}</div>
-        <div class="multicolum-item__description"> Pair text with an image to focus on your chosen prvailability, style, or even provide a review.</div>
+        <div class="multicolum-item__title">{{section.settings.material_2}}</div>
+        <div class="material-design__text--indent"> Pair text with an image to focus on your chosen prvailability, style, or even provide a review.</div>
     </div>
     {% endif %}
     
-    {% if section.settings.material-design-material-3 != blank %}
+    {% if section.settings.material_3 != blank %}
       <div class="container__multicolumn-item" > 
-        <div class="multicolum-item__title">{{section.settings.material-design-material-3}}</div>
-        <div class="multicolum-item__description"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
+        <div class="multicolum-item__title">{{section.settings.material_3 }}</div>
+        <div class="mmaterial-design__text--indent"> Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</div>
       </div>
     {% endif %}
   </div>
@@ -47,7 +49,7 @@
         "label": "description",
         "id": "material-design-description"
       },{
-        "type": "text",
+        "type": "image_picker",
         "label": "image",
         "id": "material-design-image"
       },{
@@ -55,17 +57,17 @@
         "label": "delivery-time",
         "id": "material-design-delivery-time"
       },{
-        "type": "text",
+        "type": "page",
         "label": "material-1",
-        "id": "material-design-material-1"
+        "id": "material_1"
       },{
-        "type": "text",
+        "type": "page",
         "label": "material-2",
-        "id": "material-design-material-2"
+        "id": "material_2"
       },{
-        "type": "text",
+        "type": "page",
         "label": "material-3",
-        "id": "material-design-material-3"
+        "id": "material_3"
       }
     ],
     "presets": [{

@@ -32,6 +32,10 @@
     font-weight: bold;
 }
 
-.multicolum-item__description {
+.material-design__text--indent {
     text-indent: 1rem;
+}
+
+.material-design__text--center {
+    text-align: center;
 }

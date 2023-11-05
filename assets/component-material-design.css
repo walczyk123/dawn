@@ -1,24 +1,37 @@
-.materia-design__container {
+.material-design__container {
     display: flex;
     flex-direction: column;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+}
+
+.material-design__container-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid gray;
     padding: 1rem;
-    border: 1px solid black;
 }
 
-.materia-design__container-header {
+.material-design__container-multicolumn {
     display: flex;
-    border: 1px solid black;
+    justify-content: stretch;
+    gap: 0.5rem;
 }
 
-.materia-design__container-multicolumn {
+.container__multicolumn-item {
     display: flex;
-    flex-direction: row;
-    padding: 0.25rem;
-    border: 1px solid black;
+    padding: 1rem;
+    border: 1px solid gray;
+    flex-direction: column;
+    flex-grow: 1;
+    flex: 1;
 }
 
-.materia-design__container-multicolumn-item {
-    display: flex;
-    padding: 0.25rem;
-    border: 1px solid black;
+.multicolum-item__title {
+    font-weight: bold;
+}
+
+.multicolum-item__description {
+    text-indent: 1rem;
 }

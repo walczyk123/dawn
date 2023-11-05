@@ -1,0 +1,24 @@
+.materia-design__container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.materia-design__container-header {
+    display: flex;
+    border: 1px solid black;
+}
+
+.materia-design__container-multicolumn {
+    display: flex;
+    flex-direction: row;
+    padding: 0.25rem;
+    border: 1px solid black;
+}
+
+.materia-design__container-multicolumn-item {
+    display: flex;
+    padding: 0.25rem;
+    border: 1px solid black;
+}

@@ -1,6 +1,16 @@
-<div>
-  <h3> {{section.settings.text}} </h3>
-  <p> {{section.settings.description}} </p>
+{{ 'component-material-design.css' | asset_url | stylesheet_tag }}
+
+<div class="material-design__container">
+  <div class="material-design__heading"> 
+    <h3> {{section.settings.text}} </h3>
+    <p> {{section.settings.description}} </p>
+  </div>
+  <div class="material-design__multicolumn">
+    <div class="material-design__multicolumn-item" > qwqweqweqweqeqweqew</div>
+    <div class="material-design__multicolumn-item" > qwqweqweqweqeqweqew</div>
+    <div class="material-design__multicolumn-item" > qwqweqweqweqeqweqew</div>
+    <div class="material-design__multicolumn-item" > qwqweqweqweqeqweqew</div>
+  </div>
 </div>
 
 {% schema %}

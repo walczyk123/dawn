@@ -4,22 +4,25 @@
 <div class="page-width">
   <div class="material-design__container">
     <div class="material-design__container-top" >
+
       <div class="material-design__container-header">
-      <div class="material-design__text">
-        <h3 class="material-design__text--center material-design__title"> {{ section.settings.material_design_title }} </h3>
-        <p class="material-design__text--indent"> {{ section.settings.material_design_description }} </p>  
-      </div>       
-    </div>
-    <div class="material-design__image-container">
-      <img 
-        class="material-design__image" 
-        src="{{ section.settings.material_design_image | image_url: width: 1500 }}"
-        loading="lazy"
-        alt="{{ section.settings.material_design_image.alt | escape }}"
-        width="{{ section.settings.material_design_image.width }}"
-        height="{{ section.settings.material_design_image.width | divided_by: section.settings.material_design_image.aspect_ratio }}"
-      >
-    </div>
+        <div class="material-design__text">
+          <h3 class="material-design__text--center material-design__title"> {{ section.settings.material_design_title }} </h3>
+          <p class="material-design__text--indent"> {{ section.settings.material_design_description }} </p>  
+        </div>       
+      </div>
+
+      <div class="material-design__image-container">
+        <img 
+          class="material-design__image" 
+          src="{{ section.settings.material_design_image | image_url: width: 1500 }}"
+          loading="lazy"
+          alt="{{ section.settings.material_design_image.alt | escape }}"
+          width="{{ section.settings.material_design_image.width }}"
+          height="{{ section.settings.material_design_image.width | divided_by: section.settings.material_design_image.aspect_ratio }}"
+        >
+      </div>
+      
     </div>
     <div class="material-design__container-multicolumn">
       <div class="container__multicolumn-item" > 
@@ -47,7 +50,7 @@
       </div>
     {% endif %}
   
-    {% if section.settings.material_2  != blank %}
+    {% if section.settings.material_2 != blank %}
       <div class="container__multicolumn-item" > 
         <div class="multicolum-item__title"> {{ section.settings.material_2.title }} </div>
         <div class="material-design__text--indent"> {{ section.settings.material_2.content }} </div>

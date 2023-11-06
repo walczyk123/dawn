@@ -1,4 +1,4 @@
-:root{
+:root {
     --image-size: 10rem;
     --image-padding: 2rem;
 }
@@ -77,7 +77,7 @@
     border-radius: 10%;
 }
 
-.material-design__container-top{
+.material-design__container-top {
     border: 1px solid gray;
 }
 

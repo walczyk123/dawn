@@ -4,8 +4,16 @@
 <div class="page-width">
   <div class="material-design__container">
     <div class="material-design__container-header"> 
-      <h3 class="material-design__text--center material-design__title"> {{section.settings.material-design-title}} </h3>
-      <p class="material-design__text--indent">{{section.settings.material-design-description}} </p>
+      <h3 class="material-design__text--center material-design__title"> {{ section.settings.material_design_title }} </h3>
+      <p class="material-design__text--indent"> {{ section.settings.material_design_description }} </p>
+      <img 
+        class="material-design__image" 
+        src="{{ section.settings.material_design_image | image_url: width: 1500 }}"
+        loading="lazy"
+        alt="{{ section.settings.material_design_image.alt | escape }}"
+        width="{{ section.settings.material_design_image.width }}"
+        height="{{ section.settings.material_design_image.width | divided_by: section.settings.material_design_image.aspect_ratio }}"
+      >
     </div>
 
     <div class="material-design__container-multicolumn">
@@ -17,9 +25,9 @@
             <span
               id="delivery-days" 
               class="delivery-time__days-left" 
-              data-delivery-time="{{ section.settings.material-design-delivery-time }}"
+              data-delivery-time="{{ section.settings.material_design_delivery_time  }}"
             >
-              {{section.settings.material-design-delivery-time}}
+              {{ section.settings.material_design_delivery_time }}
             </span> 
             <span id="delivery-suffix" class="delivery-time__days"></span>
             
@@ -30,64 +38,72 @@
     
     {% if section.settings.material_1 != blank %}
       <div class="container__multicolumn-item" > 
-        <div class="multicolum-item__title">{{section.settings.material_1.title }}</div>
-        <div class="material-design__text--indent">{{section.settings.material_1.content }}</div>
+        <div class="multicolum-item__title"> {{ section.settings.material_1.title }} </div>
+        <div class="material-design__text--indent"> {{ section.settings.material_1.content }} </div>
       </div>
     {% endif %}
   
     {% if section.settings.material_2  != blank %}
       <div class="container__multicolumn-item" > 
-        <div class="multicolum-item__title">{{section.settings.material_2.title }}</div>
-        <div class="material-design__text--indent">{{section.settings.material_2.content }}</div>
+        <div class="multicolum-item__title"> {{ section.settings.material_2.title }} </div>
+        <div class="material-design__text--indent"> {{ section.settings.material_2.content }} </div>
     </div>
     {% endif %}
     
     {% if section.settings.material_3 != blank %}
       <div class="container__multicolumn-item" > 
-        <div class="multicolum-item__title">{{section.settings.material_3.title }}</div>
-        <div class="material-design__text--indent">{{section.settings.material_3.content }}</div>
+        <div class="multicolum-item__title"> {{ section.settings.material_3.title }} </div>
+        <div class="material-design__text--indent"> {{ section.settings.material_3.content }} </div>
       </div>
     {% endif %}
   </div>
 </div>
 
 {% schema %}
-  {
-    "name": "Material Design",
-    "settings": [
-      {
-        "type": "text",
-        "label": "title",
-        "id": "material-design-title"
-      },{
-        "type": "text",
-        "label": "description",
-        "id": "material-design-description"
-      },{
-        "type": "image_picker",
-        "label": "image",
-        "id": "material-design-image"
-      },{
-        "type": "text",
-        "label": "delivery-time",
-        "id": "material-design-delivery-time"
-      },{
-        "type": "page",
-        "label": "material-1",
-        "id": "material_1"
-      },{
-        "type": "page",
-        "label": "material-2",
-        "id": "material_2"
-      },{
-        "type": "page",
-        "label": "material-3",
-        "id": "material_3"
-      }
-    ],
-    "presets": [{
-    "name": "Material Design for PDP",
-    "category": "Text"
-  }]
-  }
+{
+  "name": "Material Design",
+  "settings": [
+    {
+      "type": "text",
+      "label": "title",
+      "id": "material_design_title"
+    },
+    {
+      "type": "text",
+      "label": "description",
+      "id": "material_design_description"
+    },
+    {
+      "type": "image_picker",
+      "label": "image",
+      "id": "material_design_image"
+    },
+    {
+      "type": "text",
+      "label": "delivery-time",
+      "id": "material_design_delivery_time"
+    },
+    {
+      "type": "page",
+      "label": "material-1",
+      "id": "material_1"
+    },
+    {
+      "type": "page",
+      "label": "material-2",
+      "id": "material_2"
+    },
+    {
+      "type": "page",
+      "label": "material-3",
+      "id": "material_3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Material Design for PDP",
+      "category": "Text"
+    }
+  ]
+}
 {% endschema %}

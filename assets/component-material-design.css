@@ -10,7 +10,11 @@
     flex-direction: column;
     justify-content: center;
     border: 1px solid gray;
-    padding: 1rem;
+    padding: 1rem 20%;
+}
+
+.material-design__title {
+    font-weight: bold;
 }
 
 .material-design__container-multicolumn {
@@ -38,4 +42,16 @@
 
 .material-design__text--center {
     text-align: center;
+}
+
+.delivery-time__days-left {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.delivery-time__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

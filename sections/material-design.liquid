@@ -1,17 +1,29 @@
 {{ 'component-material-design.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'material-design.js' | asset_url }}" defer="defer"></script>
 
 <div class="page-width">
   <div class="material-design__container">
     <div class="material-design__container-header"> 
-      <h3 class="text-center"> {{section.settings.material-design-title}} </h3>
-      <p class="material-design__text--center material-design__text--indent">{{section.settings.material-design-description}} </p>
+      <h3 class="material-design__text--center material-design__title"> {{section.settings.material-design-title}} </h3>
+      <p class="material-design__text--indent">{{section.settings.material-design-description}} </p>
     </div>
 
     <div class="material-design__container-multicolumn">
       <div class="container__multicolumn-item" > 
         <div class="multicolum-item__title">Delivery time</div>
-        <div class="material-design__text--indent"> Your delivery time is {{section.settings.material-design-delivery-time}} days</div>
-    </div>
+        <div class="material-design__text--indent"> 
+          <span>Product will be delivered on ...</>
+          <p class="delivery-time__container"> 
+            <span 
+              class="delivery-time__days-left" 
+              data-delivery-time="{{ section.settings.material-design-delivery-time }}"
+            >
+              {{section.settings.material-design-delivery-time}}
+            </span> 
+            <span class="delivery-time__days">days</span>
+          </p>
+        </div>
+      </div>
     
     {% if section.settings.material_1 != blank %}
       <div class="container__multicolumn-item" > 

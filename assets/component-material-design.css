@@ -1,3 +1,8 @@
+:root{
+    --image-size: 10rem;
+    --image-padding: 2rem;
+}
+
 .material-design__container {
     display: flex;
     flex-direction: column;
@@ -5,11 +10,13 @@
     gap: 0.5rem;
 }
 
-.material-design__container-header {
+.material-design__container-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid gray;
+}
+
+.material-design__container-header {
     padding: 1rem 20%;
 }
 
@@ -18,9 +25,9 @@
 }
 
 .material-design__container-multicolumn {
-    display: flex;
-    justify-content: stretch;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem
 }
 
 .container__multicolumn-item {
@@ -28,8 +35,8 @@
     padding: 1rem;
     border: 1px solid gray;
     flex-direction: column;
-    flex-grow: 1;
-    flex: 1;
+    flex-basis: 50%;
+    box-sizing: content-box;
 }
 
 .multicolum-item__title {
@@ -66,5 +73,45 @@
 .material-design__image {
     width: 10rem;
     height: 10rem;
-    background-color: red;
+    background-color: gray;
+    border-radius: 10%;
+}
+
+.material-design__container-top{
+    border: 1px solid gray;
+}
+
+.material-design__image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--image-padding);
+}
+
+/* small screens */
+
+@media screen and (min-width: 750px) {
+    .material-design__image-container {
+        position: relative;
+        display: flex;
+        justify-content: end;
+        margin: var(--image-padding) var(--image-padding);
+        bottom: calc(var(--image-padding) * 2 + var(--image-size));
+        margin-bottom: calc((var(--image-padding) + var(--image-size)) * -1)
+    }
+
+    .material-design__container-multicolumn {
+        display: flex;
+        justify-content: stretch;
+        gap: 0.5rem;
+    }
+
+    .container__multicolumn-item {
+        display: flex;
+        padding: 1rem;
+        border: 1px solid gray;
+        flex-direction: column;
+        flex-grow: 1;
+        flex: 1;
+    }
 }

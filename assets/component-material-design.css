@@ -50,6 +50,13 @@
     margin: 0.5rem 0;
 }
 
+.delivery-time__date {
+    display: block;
+    font-weight: bold;
+    margin: 0.25rem 0;
+    text-align: center;
+}
+
 .delivery-time__container {
     display: flex;
     justify-content: center;

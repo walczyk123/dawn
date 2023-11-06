@@ -14,14 +14,17 @@
         <div class="material-design__text--indent"> 
           <span>Product will be delivered on ...</>
           <p class="delivery-time__container"> 
-            <span 
+            <span
+              id="delivery-days" 
               class="delivery-time__days-left" 
               data-delivery-time="{{ section.settings.material-design-delivery-time }}"
             >
               {{section.settings.material-design-delivery-time}}
             </span> 
-            <span class="delivery-time__days">days</span>
+            <span id="delivery-suffix" class="delivery-time__days"></span>
+            
           </p>
+          <span id="delivery-date" class="delivery-time__date"></span>
         </div>
       </div>
     

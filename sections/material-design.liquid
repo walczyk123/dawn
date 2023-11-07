@@ -3,114 +3,99 @@
 
 <div class="page-width">
   <div class="material-design__container">
-    <div class="material-design__container-top" >
 
-      <div class="material-design__container-header">
-        <div class="material-design__text">
-          <h3 class="material-design__text--center material-design__title"> {{ section.settings.material_design_title }} </h3>
-          <p class="material-design__text--indent"> {{ section.settings.material_design_description }} </p>  
-        </div>       
+    <div class="material-design__container-header"
+      style="background-image: url({{ section.settings.material_design_image | img_url: 'original' }})">
+      <div class="material-design__text">
+        <h3 class="material-design__title"> {{ section.settings.material_design_title }} </h3>
+        <p class="material-design__desctiption"> {{ section.settings.material_design_description }} </p>
       </div>
-
-      <div class="material-design__image-container">
-        <img 
-          class="material-design__image" 
-          src="{{ section.settings.material_design_image | image_url: width: 1500 }}"
-          loading="lazy"
-          alt="{{ section.settings.material_design_image.alt | escape }}"
-          width="{{ section.settings.material_design_image.width }}"
-          height="{{ section.settings.material_design_image.width | divided_by: section.settings.material_design_image.aspect_ratio }}"
-        >
-      </div>
-      
     </div>
-    <div class="material-design__container-multicolumn">
-      <div class="container__multicolumn-item" > 
+
+    <div class="material-design__multicolumn">
+      <div class="material-design__multicolumn-item">
         <div class="multicolum-item__title">Delivery time</div>
-        <div class="material-design__text--indent"> 
-          <span>Product will be delivered on ...</>
-          <p class="delivery-time__container"> 
-            <span
-              id="delivery-days" 
-              class="delivery-time__days-left" 
-              data-delivery-time="{{ section.settings.material_design_delivery_time  }}"
-            >
+        <div>
+          <span>Product will be delivered on ...</span>
+          <p class="delivery-time__container">
+            <span id="delivery-days" class="delivery-time__days-left"
+              data-delivery-time="{{ section.settings.material_design_delivery_time  }}">
               {{ section.settings.material_design_delivery_time }}
-            </span> 
+            </span>
             <span id="delivery-suffix" class="delivery-time__days"></span>
           </p>
           <span id="delivery-date" class="delivery-time__date"></span>
         </div>
       </div>
-    
-    {% if section.settings.material_1 != blank %}
-      <div class="container__multicolumn-item" > 
+
+      {% if section.settings.material_1 != blank %}
+      <div class="material-design__multicolumn-item">
         <div class="multicolum-item__title"> {{ section.settings.material_1.title }} </div>
         <div class="material-design__text--indent"> {{ section.settings.material_1.content }} </div>
       </div>
-    {% endif %}
-  
-    {% if section.settings.material_2 != blank %}
-      <div class="container__multicolumn-item" > 
+      {% endif %}
+
+      {% if section.settings.material_2 != blank %}
+      <div class="material-design__multicolumn-item">
         <div class="multicolum-item__title"> {{ section.settings.material_2.title }} </div>
         <div class="material-design__text--indent"> {{ section.settings.material_2.content }} </div>
-    </div>
-    {% endif %}
-    
-    {% if section.settings.material_3 != blank %}
-      <div class="container__multicolumn-item" > 
+      </div>
+      {% endif %}
+
+      {% if section.settings.material_3 != blank %}
+      <div class="material-design__multicolumn-item">
         <div class="multicolum-item__title"> {{ section.settings.material_3.title }} </div>
         <div class="material-design__text--indent"> {{ section.settings.material_3.content }} </div>
       </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
-</div>
 
-{% schema %}
-{
+  {% schema %}
+  {
   "name": "Material Design",
   "settings": [
-    {
-      "type": "text",
-      "label": "title",
-      "id": "material_design_title"
-    },
-    {
-      "type": "text",
-      "label": "description",
-      "id": "material_design_description"
-    },
-    {
-      "type": "image_picker",
-      "label": "image",
-      "id": "material_design_image"
-    },
-    {
-      "type": "text",
-      "label": "delivery-time",
-      "id": "material_design_delivery_time"
-    },
-    {
-      "type": "page",
-      "label": "material-1",
-      "id": "material_1"
-    },
-    {
-      "type": "page",
-      "label": "material-2",
-      "id": "material_2"
-    },
-    {
-      "type": "page",
-      "label": "material-3",
-      "id": "material_3"
-    }
+  {
+  "type": "text",
+  "label": "title",
+  "id": "material_design_title"
+  },
+  {
+  "type": "text",
+  "label": "description",
+  "id": "material_design_description"
+  },
+  {
+  "type": "image_picker",
+  "label": "image",
+  "id": "material_design_image"
+  },
+  {
+  "type": "text",
+  "label": "delivery-time",
+  "id": "material_design_delivery_time"
+  },
+  {
+  "type": "page",
+  "label": "material-1",
+  "id": "material_1"
+  },
+  {
+  "type": "page",
+  "label": "material-2",
+  "id": "material_2"
+  },
+  {
+  "type": "page",
+  "label": "material-3",
+  "id": "material_3"
+  }
   ],
   "presets": [
-    {
-      "name": "Material Design for PDP",
-      "category": "Text"
-    }
+  {
+  "name": "Material Design for PDP",
+  "category": "Text"
+  }
   ]
-}
-{% endschema %}
+  }
+  {% endschema %}

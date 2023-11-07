@@ -22,7 +22,8 @@
 
 .material-design__desctiption {
     text-indent: 1rem;
-    background: rgba(255, 255, 255, 0.3)
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
 }
 
 .material-design__multicolumn {

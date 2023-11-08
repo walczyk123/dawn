@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", calculateDeliveryDays());
 
 function calculateDeliveryDays() {
-    let deliveryTime = document.querySelectorAll("[data-delivery-time]")[0].dataset.deliveryTime;
-
+    let deliveryTime = document.querySelectorAll("[data-delivery-time]");
+    if (!deliveryTime[0]) { console.error("Delivery time element not found."); return; }
+    
+    deliveryTime = deliveryTime[0].dataset.deliveryTime
+    
     // getDay: 0 - sunday, 6 - saturday, 1-5 - normal
     const workDays = [1, 2, 3, 4, 5];
     const milisecondsInDay = (3600 * 1000 * 24);
@@ -12,8 +15,8 @@ function calculateDeliveryDays() {
     let calculatedDeliveryTime = 0;
 
     while (index <= deliveryTime) {
-        var date = new Date(Date.now() + milisecondsInDay * calculatedDeliveryTime);
-        var day = date.getDay();
+        let date = new Date(Date.now() + milisecondsInDay * calculatedDeliveryTime);
+        let day = date.getDay();
 
         if (workDays.includes(day)) { index++; }
 
@@ -27,7 +30,10 @@ function calculateDeliveryDays() {
     if (calculatedDeliveryTime == 1) { suffix = "day" }
 
     document.getElementById("delivery-days").innerHTML = calculatedDeliveryTime;
+    if (!deliveryTime) { console.error("Delivery days element not found."); return; }
+
     document.getElementById("delivery-suffix").innerHTML = suffix;
+    if (!deliveryTime) { console.error("Delivery sufix element not found."); return; }
 
     addDeliveryDate(calculatedDeliveryTime);
 }
@@ -40,6 +46,6 @@ function addDeliveryDate(days) {
     let dd = dateObj.getUTCDate();
     let yyyy = dateObj.getUTCFullYear();
 
-    newdate = dd + "-" + mm + "-" + yyyy;
+    newdate = (`${dd}-${mm}-${yyyy}`);
     document.getElementById("delivery-date").innerHTML = newdate;
 }

@@ -16,6 +16,8 @@
     </div>
 
     <div class="material-design__multicolumn">
+
+      {% if section.settings.material_design_delivery_time != blank %}
       <div class="material-design__multicolumn-item">
         <div class="multicolum-item__title">Delivery time</div>
         <div>
@@ -32,6 +34,7 @@
           <span id="delivery-date" class="delivery-time__date"></span>
         </div>
       </div>
+      {% endif %}
 
       {% if section.settings.material_1 != blank %}
         <div class="material-design__multicolumn-item">

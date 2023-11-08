@@ -18,22 +18,22 @@
     <div class="material-design__multicolumn">
 
       {% if section.settings.material_design_delivery_time != blank %}
-      <div class="material-design__multicolumn-item">
-        <div class="multicolum-item__title">Delivery time</div>
-        <div>
-          <span>Product will be delivered on ...</span>
-          <p class="delivery-time__container">
-            <span
-              id="delivery-days"
-              class="delivery-time__days-left"
-              data-delivery-time="{{ section.settings.material_design_delivery_time  }}">
-              {{ section.settings.material_design_delivery_time }}
-            </span>
-            <span id="delivery-suffix" class="delivery-time__days"></span>
-          </p>
-          <span id="delivery-date" class="delivery-time__date"></span>
+        <div class="material-design__multicolumn-item">
+          <div class="multicolum-item__title">Delivery time</div>
+          <div>
+            <span>Product will be delivered on ...</span>
+            <p class="delivery-time__container">
+              <span
+                id="delivery-days"
+                class="delivery-time__days-left"
+                data-delivery-time="{{ section.settings.material_design_delivery_time  }}">
+                {{ section.settings.material_design_delivery_time }}
+              </span>
+              <span id="delivery-suffix" class="delivery-time__days"></span>
+            </p>
+            <span id="delivery-date" class="delivery-time__date"></span>
+          </div>
         </div>
-      </div>
       {% endif %}
 
       {% if section.settings.material_1 != blank %}

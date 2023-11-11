@@ -1,5 +1,7 @@
 {{ 'component-material-design.css' | asset_url | stylesheet_tag }}
+{{ 'delivery-schedule.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'material-design.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'delivery-schedule.js' | asset_url }}" defer="defer"></script>
 
 <div class="page-width">
   <div class="material-design__container">
@@ -21,18 +23,18 @@
         <div class="material-design__multicolumn-item">
           <div class="multicolum-item__title">Delivery time</div>
           <div>
-            <span>Product will be delivered on ...</span>
-            <p class="delivery-time__container">
-              <span
-                id="delivery-days"
-                class="delivery-time__days-left"
-                data-delivery-time="{{ section.settings.material_design_delivery_time  }}">
-                {{ section.settings.material_design_delivery_time }}
-              </span>
-              <span id="delivery-suffix" class="delivery-time__days"></span>
-            </p>
+            <span>Product will be delivered on</span>
+            <span id="delivery-days" data-delivery-time="{{ section.settings.material_design_delivery_time }}">
+              {{ section.settings.material_design_delivery_time }}
+            </span>
+            <span id="delivery-suffix" class="delivery-time__days"></span>
             <span id="delivery-date" class="delivery-time__date"></span>
+
           </div>
+          <delivery-schedule style="box-sizing: border-box;">
+            <div id="delivery-days-show" class="delivery-time__schedule">Show delivery days schedule</div>
+            <div id="delivery-days-list" class="delivery-days__list hidden"></div>
+          </delivery-schedule>
         </div>
       {% endif %}
 

@@ -1,0 +1,23 @@
+.delivery-time__day {
+    line-height: 2rem;
+    min-width: 100px;
+}
+
+.delivery-time__day--normal {
+    color: #4c9ce7;
+}
+
+.delivery-time__day--absentation {
+    color: #ee231c;
+}
+
+.delivery-days__list {
+    padding: 1rem 0.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.hidden {
+    display: none;
+}

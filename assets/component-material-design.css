@@ -46,16 +46,22 @@
     font-weight: bold;
 }
 
-.delivery-time__days-left {
-    font-size: 5rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
-}
-
 .delivery-time__container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.delivery-time__schedule {
+    background: #4c9ce7;
+    border-radius: 0.5rem;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    height: 4rem;
+    line-height: 4rem;
+
 }
 
 .delivery-time__date {

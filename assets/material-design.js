@@ -46,6 +46,6 @@ function addDeliveryDate(days) {
     let dd = dateObj.getUTCDate();
     let yyyy = dateObj.getUTCFullYear();
 
-    newdate = (`${dd}-${mm}-${yyyy}`);
-    document.getElementById("delivery-date").innerHTML = newdate;
+    output = (`Estimated day: ${dd}-${mm}-${yyyy}`);
+    document.getElementById("delivery-date").innerHTML = output;
 }

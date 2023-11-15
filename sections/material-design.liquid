@@ -1,0 +1,124 @@
+{{ 'component-material-design.css' | asset_url | stylesheet_tag }}
+{{ 'delivery-schedule.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'material-design.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'delivery-schedule.js' | asset_url }}" defer="defer"></script>
+
+<div class="page-width">
+  <div class="material-design__container">
+
+    <div class="material-design__container-header" style="background-image: url({{ section.settings.material_design_image | img_url: 'original' }})">
+      <div class="material-design__text">
+        <h3 class="material-design__title">
+          {{ section.settings.material_design_title }}
+        </h3>
+        <p class="material-design__desctiption">
+          {{ section.settings.material_design_description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="material-design__multicolumn">
+
+      {% if section.settings.material_design_delivery_time != blank %}
+        <div class="material-design__multicolumn-item">
+          <div class="multicolum-item__title">Delivery time</div>
+          <div>
+            <span>Product will be delivered on</span>
+            <span id="delivery-days" data-delivery-time="{{ section.settings.material_design_delivery_time }}">
+              {{ section.settings.material_design_delivery_time }}
+            </span>
+            <span id="delivery-suffix" class="delivery-time__days"></span>
+            <span id="delivery-date" class="delivery-time__date"></span>
+
+          </div>
+          <delivery-schedule style="box-sizing: border-box;">
+            <div id="delivery-days-show" class="delivery-time__schedule">Toggle delivery days schedule</div>
+            <div id="delivery-days-list" class="delivery-days__list hidden"></div>
+          </delivery-schedule>
+        </div>
+      {% endif %}
+
+      {% if section.settings.material_1 != blank %}
+        <div class="material-design__multicolumn-item">
+          <div class="multicolum-item__title">
+            {{ section.settings.material_1.title }}
+          </div>
+          <div class="material-design__text--indent">
+            {{ section.settings.material_1.content }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.material_2 != blank %}
+        <div class="material-design__multicolumn-item">
+          <div class="multicolum-item__title">
+            {{ section.settings.material_2.title }}
+          </div>
+          <div class="material-design__text--indent">
+            {{ section.settings.material_2.content }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.settings.material_3 != blank %}
+        <div class="material-design__multicolumn-item">
+          <div class="multicolum-item__title">
+            {{ section.settings.material_3.title }}
+          </div>
+          <div class="material-design__text--indent">
+            {{ section.settings.material_3.content }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Material Design",
+    "settings": [
+      {
+        "type": "text",
+        "label": "title",
+        "id": "material_design_title"
+      },
+      {
+        "type": "text",
+        "label": "description",
+        "id": "material_design_description"
+      },
+      {
+        "type": "image_picker",
+        "label": "image",
+        "id": "material_design_image"
+      },
+      {
+        "type": "text",
+        "label": "delivery-time",
+        "id": "material_design_delivery_time"
+      },
+      {
+        "type": "page",
+        "label": "material-1",
+        "id": "material_1"
+      },
+      {
+        "type": "page",
+        "label": "material-2",
+        "id": "material_2"
+      },
+      {
+        "type": "page",
+        "label": "material-3",
+        "id": "material_3"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Material Design for PDP",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

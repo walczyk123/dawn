@@ -1,0 +1,104 @@
+.material-design__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+}
+
+.material-design__container-header {
+    padding: 1rem 20%;
+    border: 1px solid #777777;
+    color: #000000;
+    mix-blend-mode: difference;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.material-design__title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.material-design__desctiption {
+    text-indent: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
+}
+
+.material-design__multicolumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem
+}
+
+.material-design__multicolumn-item {
+    display: flex;
+    padding: 1rem;
+    border: 1px solid #777777;
+    flex-direction: column;
+    flex-basis: 50%;
+    box-sizing: content-box;
+    text-indent: 1rem;
+}
+
+.multicolum-item__title {
+    font-weight: bold;
+}
+
+.delivery-time__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery-time__schedule {
+    background: #4c9ce7;
+    border-radius: 0.5rem;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    height: 4rem;
+    line-height: 4rem;
+
+}
+
+.delivery-time__date {
+    display: block;
+    font-weight: bold;
+    margin: 0.25rem 0;
+    text-align: center;
+}
+
+.material-design__image {
+    width: 10rem;
+    height: 10rem;
+    background-color: #777777;
+    border-radius: 10%;
+}
+
+.material-design__image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* small screens */
+
+@media screen and (min-width: 750px) {
+    .material-design__multicolumn {
+        display: flex;
+        justify-content: stretch;
+        gap: 0.5rem;
+    }
+
+    .material-design__multicolumn-item {
+        display: flex;
+        padding: 1rem;
+        border: 1px solid #777777;
+        flex-direction: column;
+        flex-grow: 1;
+        flex: 1;
+    }
+}
